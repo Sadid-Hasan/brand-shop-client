@@ -1,0 +1,35 @@
+{
+    "brands": [
+      {
+        "name": "Toyota",
+        "image": "https://i.ibb.co/7kPXS2j/toyota.png",
+        "tagline": "Innovation that Excites Every Drive"
+      },
+      {
+        "name": "Nissan",
+        "image": "https://i.ibb.co/6RtS7LX/ford.png",
+        "tagline": "Innovation that Moves You"
+      },
+      {
+        "name": "BMW",
+        "image": "https://i.ibb.co/vLB4K72/bmw.png",
+        "tagline": "The Ultimate Driving Experience"
+      },
+      {
+        "name": "Mercedes-Benz",
+        "image": "https://i.ibb.co/W5vX0Jc/mercedes.png",
+        "tagline": "The Best or Nothing"
+      },
+      {
+        "name": "Audi",
+        "image": "https://i.ibb.co/55Tdb1J/audi.png",
+        "tagline": "Advancement through Technology"
+      },
+      {
+        "name": "Honda",
+        "image": "https://i.ibb.co/fxJsSn1/Honda.png",
+        "tagline": "Power of Dreams"
+      }
+    ]
+  }
+  
