@@ -1,12 +1,30 @@
 
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
+    const{signIn}=useContext(AuthContext);
+
+    const handleLogin = e =>{
+        e.preventDefault();
+        console.log(e.currenttarget);
+        const form = new FormData(e.currenttarget);
+        const email =form.get('email');
+        const password =form.get('password');
+        signIn(email,password)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error);
+        })
+    }
     return (
         <div>
             <section className="bg-slate-50 dark:bg-gray-900 font-poppins">
     <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-        <form className="w-full max-w-md">
+        <form onSubmit={handleLogin}  className="w-full max-w-md">
             <h1 className=" text-center  font-bold text-orange-500 normal-case text-5xl">Car Connect X</h1>
             <h1 className="mt-3 text-center text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">Please Login To continue</h1>
 
@@ -17,7 +35,7 @@ const Login = () => {
                     </svg>
                 </span>
 
-                <input type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address"/>
+                <input type="email" required name='email' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address"/>
             </div>
 
             <div className="relative flex items-center mt-4">
@@ -27,7 +45,7 @@ const Login = () => {
                     </svg>
                 </span>
 
-                <input type="password" className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password"/>
+                <input type="password"  required name='password' className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-orange-400 dark:focus:border-orange-300 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password"/>
             </div>
 
             <div className="mt-6">
