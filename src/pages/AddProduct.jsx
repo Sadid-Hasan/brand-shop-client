@@ -3,7 +3,58 @@ import React from 'react';
 const AddProduct = () => {
     return (
         <div>
-            <h1>This is add product</h1>
+            <section className="bg-white dark:bg-gray-900 font-poppins">
+    <div className="flex justify-center min-h-screen">
+        <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
+            <div className="w-full">
+            <h1 className=" text-center  font-bold text-orange-500 normal-case text-5xl">Car Connect X</h1>
+                <h1 className="text-2xl  text-center font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
+                    Add Your Favourite Car
+                </h1>
+                <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
+                    <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200"> Name</label>
+                        <input type="text" placeholder="Car Name" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-orange-400 dark:focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                    </div>
+
+                    <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Brand</label>
+                        <input type="text" placeholder="Brand Name" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-orange-400 dark:focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                    </div>
+
+                    <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Image Url</label>
+                        <input type="text" placeholder="Image Url" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-orange-400 dark:focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                    </div>
+
+                    <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Type</label>
+                        <input type="text" placeholder="Type of Car" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-orange-400 dark:focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                    </div>
+
+                    <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Price (K)</label>
+                        <input type="number" placeholder="Enter car price " className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-orange-400 dark:focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                    </div>
+                    <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Rating </label>
+                        <input type="number" placeholder="Enter rating from 1-5 " className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-orange-400 dark:focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                    </div>
+
+                    <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Short Desccription</label>
+                        <input type="text" placeholder="Short Description" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-orange-400 dark:focus:border-orange-400 focus:ring-orange-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                    </div>
+
+                    <button
+                        className="flex items-center  justify-center w-full px-6 py-3  text-lg font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring focus:ring-orange-300 focus:ring-opacity-50">
+                        Add Car
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
         </div>
     );
 };
