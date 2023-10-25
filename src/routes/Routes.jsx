@@ -6,7 +6,6 @@ import Mycart from "../pages/Mycart";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Cars from "../pages/Cars";
-import CarDetails from "../pages/CarDetails";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -39,10 +38,7 @@ const router = createBrowserRouter([
     path:"/cars",
     element:<Cars></Cars>
   },
-  {
-    path:"/car-deatil",
-    element:<PrivateRoute><CarDetails></CarDetails></PrivateRoute>
-  }
+  
 ]
   }
 ]);
