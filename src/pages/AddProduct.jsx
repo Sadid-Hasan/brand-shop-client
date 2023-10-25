@@ -16,7 +16,7 @@ const handleAddProduct =event =>{
     const newProduct ={car_name,brand_name,image,type,price,rating,description}
     console.log(newProduct)
 
-    fetch('http://localhost:5000/car',{
+    fetch('https://brand-shop-server-xmehh5xyk-sadid-hasans-projects.vercel.app/car',{
         method :'POST',
         headers :{
             'content-type':'application/json'

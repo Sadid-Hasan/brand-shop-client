@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/my-cart",
     element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
-    loader:()=>fetch('http://localhost:5000/car')
+    loader:()=>fetch('https://brand-shop-server-xmehh5xyk-sadid-hasans-projects.vercel.app/car')
   },
   {
     path: "/login",

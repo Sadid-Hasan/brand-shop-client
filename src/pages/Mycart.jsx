@@ -12,7 +12,7 @@ const Mycart = () => {
     
     if (cartData.length === 0) {
       setIsLoading(true);
-      fetch('http://localhost:5000/car')
+      fetch('https://brand-shop-server-xmehh5xyk-sadid-hasans-projects.vercel.app/car')
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -32,7 +32,7 @@ const Mycart = () => {
   }, []); 
 
   const handleDelete = carId => {
-    fetch(`http://localhost:5000/car/${carId}`, {
+    fetch(`https://brand-shop-server-xmehh5xyk-sadid-hasans-projects.vercel.app/car/${carId}`, {
       method: 'DELETE'
     })
       .then(response => {
