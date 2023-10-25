@@ -6,6 +6,8 @@ import Mycart from "../pages/Mycart";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Cars from "../pages/Cars";
+import CarDetails from "../pages/CarDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -18,11 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/add-product",
-    element: <AddProduct></AddProduct>,
+    element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
   },
   {
     path: "/my-cart",
-    element: <Mycart></Mycart>,
+    element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
     loader:()=>fetch('http://localhost:5000/car')
   },
   {
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
   {
     path:"/cars",
     element:<Cars></Cars>
+  },
+  {
+    path:"/car-deatil",
+    element:<PrivateRoute><CarDetails></CarDetails></PrivateRoute>
   }
 ]
   }
