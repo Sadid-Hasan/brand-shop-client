@@ -1,36 +1,35 @@
-import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+
 const Login = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const handleLogin = e => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
 
-        signInUser(email, password)
-            .then(result => {
-                console.log(result.user)
-                e.target.reset();
-                navigate('/');
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
+        try {
+            await signInUser(email, password);
+            e.target.reset();
+            navigate(location?.state ? location.state.from : "/");
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-    const handleGoogleSignIn = () => {
-        signInWithGoogle()
-            .then(result => {
-                console.log(result.user)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
+    const handleGoogleSignIn = async (e) => {
+        e.preventDefault();
+        try {
+            await signInWithGoogle();
+            navigate(location?.state ? location.state.from : "/");
+        } catch (error) {
+            console.error(error);
+        }
+    };
     return (
         <div>
             <section className="bg-slate-50 dark:bg-gray-900 font-poppins">

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
@@ -6,32 +6,28 @@ const Signup = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const handleRegister = e => {
+    const handleRegister = async (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
 
-        signInUser(email, password)
-            .then(result => {
-                console.log(result.user)
-                e.target.reset();
-                navigate('/');
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
+        try {
+            await signInUser(email, password);
+            e.target.reset();
+            navigate("/");
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-    const handleGoogleSignIn = () => {
-        signInWithGoogle()
-            .then(result => {
-                console.log(result.user)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
+    const handleGoogleSignIn = async () => {
+        try {
+            await signInWithGoogle();
+            navigate("/");
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <div>
