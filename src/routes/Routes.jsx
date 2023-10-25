@@ -2,7 +2,7 @@ import { createBrowserRouter} from "react-router-dom";
 import Root from "../layouts/Root";
 import Home from "../pages/Home";
 import AddProduct from "../pages/AddProduct";
-import MyCart from "../pages/MyCart";
+import Mycart from "../pages/Mycart";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 
@@ -21,7 +21,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/my-cart",
-    element: <MyCart></MyCart>,
+    element: <Mycart></Mycart>,
+    loader:()=>fetch('http://localhost:5000/car')
   },
   {
     path: "/login",
